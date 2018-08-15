@@ -9,6 +9,6 @@ public class HelloWorld {
     Greeter greeter = new Greeter();
     System.out.println(greeter.sayHello());
     RestCallExample rce = new RestCallExample();
-    rce.getStockPrice();
+    rce.getStockPrice("MSFT");
   }
 }

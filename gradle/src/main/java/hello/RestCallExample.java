@@ -9,12 +9,17 @@ import java.net.URL;
 
 public class RestCallExample {
 
+
+    public static void main (String[] args) {
+        RestCallExample obj = new RestCallExample();
+        obj.getStockPrice("GOOG");
+    }
     // http://localhost:8080/RESTfulExample/json/product/get
-    public void getStockPrice () {
+    public void getStockPrice (String ticker) {
 
         try {
 
-            URL url = new URL("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo");
+            URL url = new URL("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&apikey=demo");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
